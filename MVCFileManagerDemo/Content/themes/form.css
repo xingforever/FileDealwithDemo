@@ -1,0 +1,33 @@
+﻿#fm {
+    margin: 0;
+    padding: 7px 20px;
+}
+
+.ftitle {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.fitem {
+    margin-bottom:5px;
+    margin-left:5px;
+}
+.fitem1 {
+    margin-bottom:5px;
+    margin-left: 16px;
+    
+}
+
+    .fitem label {
+        display: inline-block;
+        width: 60px;
+        text-align: right;
+        padding: 0px 3px 0px 3px;
+    }
+
+    .fitem img {
+        vertical-align: middle;
+    }

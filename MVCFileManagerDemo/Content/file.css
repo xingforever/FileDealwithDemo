@@ -1,0 +1,36 @@
+﻿.file_up {
+    background: url('images/file/up.png') no-repeat center center;
+}
+.file_copy {
+    background: url('images/file/copy.png') no-repeat center center;
+}
+.file_cut {
+    background: url('images/file/cut.png') no-repeat center center;
+}
+.file_delete {
+    background: url('images/file/delete.png') no-repeat center center;
+}
+.file_download {
+    background: url('images/file/download.png') no-repeat center center;
+}
+.file_newfolder {
+    background: url('images/file/newfolder.png') no-repeat center center;
+}
+.file_refresh {
+    background: url('images/file/refresh.png') no-repeat center center;
+}
+.file_rename {
+    background: url('images/file/rename.png') no-repeat center center;
+}
+.file_upload {
+    background: url('images/file/upload.png') no-repeat center center;
+}
+.file_zipfile {
+    background: url('images/file/zipfile.png') no-repeat center center;
+}
+.folder_user{
+    background: url('images/file/folder_user.png') no-repeat center center;
+}
+.folder_table{
+    background: url('images/file/folder_table.png') no-repeat center center;
+}

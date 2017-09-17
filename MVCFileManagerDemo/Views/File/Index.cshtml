@@ -1,0 +1,68 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/Content/file.css" rel="stylesheet" />
+    <link href="~/Content/themes/color.css" rel="stylesheet" />
+    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="easyui-layout" style="width: 100%; height: 100%;">
+        <div data-options="region:'west',split:true,border:false" style="width: 200px; padding: 2px 0px 2px 2px;">
+            <div class="easyui-panel" style="padding: 5px;" title="导航目录" data-options="fit:true,iconCls:'icon-folder'">
+                <ul id="ftree" class="easyui-tree"></ul>
+            </div>
+        </div>
+        <div data-options="region:'center',border:false" style="padding: 2px 2px 2px 0px;">
+            <!-- 工具栏 -->
+            <div id="toolbar" style="padding: 2px 5px;">
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconAlign:'top',width:48,iconCls:'file_up'" onclick="up()" id="btnUp">向上</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconAlign:'top',width:48,iconCls:'file_refresh'" onclick="refersh()">刷新</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconAlign:'top',width:48,iconCls:'file_newfolder'" onclick="createFolder()" id="btnCreateFolder">文件夹</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconAlign:'top',width:48,iconCls:'file_rename'" onclick="rename()" id="btnRe">重命名</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconAlign:'top',width:48,iconCls:'file_delete'" onclick="del()" id="btnDel">删除</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconAlign:'top',width:48,iconCls:'file_cut'" onclick="doAciton('cut')" id="btnCut">剪切</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconAlign:'top',width:48,iconCls:'file_copy'" onclick="doAciton('copy')" id="btnCopy">复制</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconAlign:'top',width:48,iconCls:'file_zipfile'" onclick="zip()" id="btnZip">压缩</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconAlign:'top',width:48,iconCls:'file_download'" onclick="down()" id="btnDown">下载</a>
+                <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,iconAlign:'top',width:48,iconCls:'file_upload'" onclick="openDialog()" id="btnUploadTool">上传</a>
+            </div>
+            <div id="contextMenu" class="easyui-menu" style="width: 120px;">
+                <div data-options="iconCls:'file_refresh'" onclick="refersh()">刷新</div>
+                <div class="menu-sep"></div>
+                <div data-options="iconCls:'file_rename'" onclick="rename()" id="menuRe">重命名</div>
+                <div class="menu-sep"></div>
+                <div data-options="iconCls:'file_delete'" onclick="del()" id="menuDel">删除</div>
+                <div data-options="iconCls:'file_cut'" onclick="doAciton('cut')" id="menuCut">剪切</div>
+                <div data-options="iconCls:'file_copy'" onclick="doAciton('copy')" id="menuCopy">复制</div>
+                <div class="menu-sep"></div>
+                <div data-options="iconCls:'file_zipfile'" onclick="zip()" id="menuZip">压缩</div>
+                <div data-options="iconCls:'file_download'" onclick="down()" id="menuDown">下载</div>
+            </div>
+            <table id="dg" title="文件列表"></table>
+        </div>
+    </div>
+    <div id="dlg" class="easyui-dialog" style="width: 400px; height: 300px;" data-options="iconCls:'icon-folder',closed:true">
+        <ul id="dtree" class="easyui-tree" data-options="title:'目录结构',fit:true"></ul>
+        <div id="dlg-buttons">
+            <a id="btnSubmit" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-ok'" style="width: 70px">确定</a>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-min.js"></script>
+    <script src="~/Scripts/jquery-easyui-min.js"></script>
+    <script src="~/Scripts/easyui-lang-zh_CN.js"></script>
+    <script src="~/Scripts/WebUploader/webuploader.js"></script>
+    <script src="~/Scripts/upload.js"></script>
+    <script src="~/Scripts/file.js"></script>
+   
+
+</body>
+</html>

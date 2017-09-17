@@ -1,0 +1,73 @@
+﻿#north {
+    height: 65px;
+    padding: 0px;
+    background: url(images/headbg.png);
+}
+
+#headerLogo {
+    float: left;
+    margin-top: 6px;
+    margin-left: 20px;
+    background: url(images/homelogo.png);
+    height: 52px;
+    width: 360px;
+    display: inline;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='homelogo.png', sizingMethod='crop');
+}
+
+#headermenu {
+    float: right;
+    margin-top: 20px;
+    margin-right: 7px;
+}
+
+#userMenu {
+    background: transparent;
+    padding: 0;
+    border-width: 1px;
+    border-style: dashed;
+    border-color:#ddd;
+    color:#ddd;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.menu_nav {
+    list-style-type: none;
+    padding: 5px 5px 5px 5px;
+    text-indent: 0px;
+    margin: 0px;
+}
+    /*导航菜单样式管理*/
+    .menu_nav li {
+        padding: 0px;
+        margin: 4px;
+    }
+
+        .menu_nav li div {
+            width: 100%;
+        }
+
+            .menu_nav li div a {
+                display: block;
+                padding: 5px 7px 5px 7px;
+                margin: 0px;
+                text-decoration: none;
+                color: #000;
+                text-align: left;
+                border: dashed;
+                border-width: 1px;
+                border-color: transparent;
+            }
+
+                .menu_nav li div a span {
+                    padding-left: 18px;
+                    margin-right: 3px;
+                }
+
+                .menu_nav li div a:hover,
+                .menu_nav li div a:focus {
+                    background: #feefb6;
+                    border-color: #ff6a00;
+                }
