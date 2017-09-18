@@ -5,3 +5,4 @@ E:\Program\Web\文件管理功能Demo\FileHelper\obj\Debug\FileHelper.dll
 E:\Program\Web\文件管理功能Demo\FileHelper\obj\Debug\FileHelper.pdb
 E:\Program\Web\文件管理功能Demo\FileHelper\bin\Debug\Newtonsoft.Json.dll
 E:\Program\Web\文件管理功能Demo\FileHelper\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\Program\Web\文件管理功能Demo\FileHelper\obj\Debug\FileHelper.csproj.CoreCompileInputs.cache

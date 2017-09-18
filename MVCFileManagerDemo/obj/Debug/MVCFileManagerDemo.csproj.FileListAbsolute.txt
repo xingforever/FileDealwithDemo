@@ -54,3 +54,4 @@ E:\Program\Web\文件管理功能Demo\MVCFileManagerDemo\obj\Debug\MVCFileManage
 E:\Program\Web\文件管理功能Demo\MVCFileManagerDemo\bin\FileHelper.dll
 E:\Program\Web\文件管理功能Demo\MVCFileManagerDemo\bin\FileHelper.pdb
 E:\Program\Web\文件管理功能Demo\MVCFileManagerDemo\bin\ICSharpCode.SharpZipLib.dll
+E:\Program\Web\文件管理功能Demo\MVCFileManagerDemo\obj\Debug\MVCFileManagerDemo.csproj.CoreCompileInputs.cache

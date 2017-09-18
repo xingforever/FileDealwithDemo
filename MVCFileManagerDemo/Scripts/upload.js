@@ -1,4 +1,4 @@
-﻿$(function () {
+﻿
     //上传对象
     var uploader = WebUploader.create({
 
@@ -63,7 +63,6 @@
     });
 
   
-})
 
 
 
