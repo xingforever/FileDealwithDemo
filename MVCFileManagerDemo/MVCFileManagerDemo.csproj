@@ -365,7 +365,6 @@
     <Content Include="Content\themes\filetype\xlt.gif" />
     <Content Include="Content\themes\filetype\xml.gif" />
     <Content Include="Content\themes\filetype\zip.gif" />
-    <Content Include="Content\themes\form.css" />
     <Content Include="Content\themes\gray\accordion.css" />
     <Content Include="Content\themes\gray\calendar.css" />
     <Content Include="Content\themes\gray\combo.css" />
@@ -415,7 +414,6 @@
     <Content Include="Content\themes\gray\tree.css" />
     <Content Include="Content\themes\gray\validatebox.css" />
     <Content Include="Content\themes\gray\window.css" />
-    <Content Include="Content\themes\home.css" />
     <Content Include="Content\themes\icon.css" />
     <Content Include="Content\themes\icons\attach.png" />
     <Content Include="Content\themes\icons\back.png" />
@@ -526,7 +524,6 @@
     <Content Include="Content\themes\metro\tree.css" />
     <Content Include="Content\themes\metro\validatebox.css" />
     <Content Include="Content\themes\metro\window.css" />
-    <Content Include="Content\themes\newgis.css" />
     <Content Include="Content\webuploader.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\easyui-lang-zh_CN.js" />
