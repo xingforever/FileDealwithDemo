@@ -533,7 +533,6 @@
     <Content Include="Scripts\file.js" />
     <Content Include="Scripts\jquery-easyui-min.js" />
     <Content Include="Scripts\jquery-min.js" />
-    <Content Include="Scripts\upload.js" />
     <Content Include="Scripts\WebUploader\Uploader.swf" />
     <Content Include="Scripts\WebUploader\webuploader.js" />
     <Content Include="Web.config" />

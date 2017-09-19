@@ -154,10 +154,25 @@ namespace MVCFileManagerDemo.Controllers
         public JsonResult Upload(HttpPostedFileBase file)
         {
             //上传文件
-           
+            string basePath = Server.MapPath("~");//根地址
+            var currentPath = Request["currentPath"];//获取文件保存的相对地址  
+            //文件保存的绝对位置
+            string thePath = string.Format(@"{0}Document\Files\{1}", basePath, currentPath);
+            if (file!=null)
+            {
+                string fileName = Path.GetFileName(file.FileName);//文件名
+                string fileExt = Path.GetExtension(fileName);//文件扩展名
+                if (!Directory.Exists(thePath)) //   创建文件夹
+                {
+                    Directory.CreateDirectory(thePath);
+                }
+                string filePathName = thePath + "\\" + fileName;
+                file.SaveAs(filePathName);//保存文件
+                var result =  Json(new { state="ok",path= filePathName },JsonRequestBehavior.DenyGet);
+                return result;
+            }
 
-            string basePath = Server.MapPath("~");
-            return Json("你好", "text/html", JsonRequestBehavior.AllowGet);
+            return Json(new { state = "no", path = "null" }, JsonRequestBehavior.DenyGet);
         }
 
         /// <summary>

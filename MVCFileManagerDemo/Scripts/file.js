@@ -533,14 +533,15 @@ function openDialog() {
     var thedlg = {};//文件上传页html代码
     var title = "文件上传";
     var theDomId = "uploader";
-    thedlg = '<div id="' + theDomId + '"class="wu-example"">';//总div
-    thedlg = thedlg + '<div id="thelist" class="uploader-list"></div>';//用于存放文件信息
-    thedlg = thedlg + '<div class="btns">';
-    thedlg = thedlg + '<div id="picker" style=>' + "选择文件" + '</div>';   
+    thedlg = '<div id="' + theDomId + '"class="wu-example">';//总div
+    thedlg = thedlg + '<div id="thelist" class="uploader-list"  \"></div>';//用于存放文件信息
+    thedlg = thedlg + '<div class="btns" style=" text-align:center" >';
+    thedlg = thedlg + '<div id="picker" style="margin:auto auto">' + "选择文件" + '</div>';   
     thedlg = thedlg + '<button id="ctlBtn" class="btn btn_default">'+"开始上传"+'</button>';
     thedlg += '</div>';
     thedlg +=  '</div>';//文件上传界面设计  比较差
-       $("body").append(thedlg);
+    $("body").append(thedlg);
+   
        $('#' + theDomId).dialog({
            cache: false,          
            model:true,
@@ -548,7 +549,7 @@ function openDialog() {
            height: 200,
            title: "上传文件",           
            resizable: false,
-           //onClose: function () { blablablalba; } 
+           onClose: function () { $("#" + theDomId).remove();} 
 
        });
        uploadSetting();
@@ -556,7 +557,7 @@ function openDialog() {
    
 
 }
-//下载设置
+//下载设置  百度webupload 默认设置
 function uploadSetting() {
 
     var $ = jQuery,
@@ -574,25 +575,31 @@ function uploadSetting() {
         swf: 'WebUploader/Uploader.swf',
 
         // 文件接收服务端。  
-        server: 'UploadExcel',///这里需要特别注意  
+        server: 'File/Upload',///这里需要特别注意  
 
         // 选择文件的按钮。可选。  
         // 内部根据当前运行是创建，可能是input元素，也可能是flash.  
         pick: '#picker',
-
-        accept: {
-            title: 'Excel',
-            extensions: 'xls,xlsx',
-            mimeTypes: 'xls/*'
+        //默认允许类型
+        //accept: {
+        //    title: 'Excel',
+        //    extensions: 'xls,xlsx',
+        //    mimeTypes: 'xls/*'
+        //}
+        formData: {
+            currentPath:"public"
+            
         }
+
     });
 
     // 当有文件添加进来的时候  
     uploader.on('fileQueued', function (file) {
-        $list.append('<div id="' + file.id + '" class="item">' +
-            '<h4 class="info">' + file.name + '</h4>' +
-            '<p class="state">等待上传...</p>' +
+        $list.append('<div id="' + file.id + '" class="item" " >' +
+            '<h4 >' + file.name + '</h4>' +
+            '<p >等待上传...</p>' +
             '</div>');
+        uploader.options.formData.currentPath = currentPath;
     });
 
     // 文件上传过程中创建进度条实时显示。  
@@ -615,10 +622,11 @@ function uploadSetting() {
     //上传成功后
     uploader.on('uploadSuccess', function (file, response) {
         $('#' + file.id).find('p.state').text('已上传');
-
-        var path = response.filePath;
-        $("#download").attr("href", response.filePath);//resporse  是重点
-
+        var path = response.state;
+        if (state == "no") {
+            
+        }
+        initData(currentPath); 
     });
 
     //文件上传错误
@@ -647,4 +655,11 @@ function uploadSetting() {
         }
     });
 
+    $btn.on('click', function () {
+        if (state === 'uploading') {
+            uploader.stop();
+        } else {
+            uploader.upload();
+        }
+    });
 }
