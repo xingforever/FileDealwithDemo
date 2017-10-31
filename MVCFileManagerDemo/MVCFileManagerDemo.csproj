@@ -465,15 +465,6 @@
     <Content Include="Content\themes\images\icons\zoom.png" />
     <Content Include="Content\themes\images\login-box-backg.png" />
     <Content Include="Content\themes\images\login-system-title.png" />
-    <Content Include="Content\themes\images\login_back_img\1.jpg" />
-    <Content Include="Content\themes\images\login_back_img\2.jpg" />
-    <Content Include="Content\themes\images\login_back_img\3.jpg" />
-    <Content Include="Content\themes\images\login_back_img\4.jpg" />
-    <Content Include="Content\themes\images\login_back_img\5.jpg" />
-    <Content Include="Content\themes\images\login_back_img\6.jpg" />
-    <Content Include="Content\themes\images\login_back_img\7.jpg" />
-    <Content Include="Content\themes\images\login_back_img\8.jpg" />
-    <Content Include="Content\themes\images\login_back_img\9.jpg" />
     <Content Include="Content\themes\images\noscript.gif" />
     <Content Include="Content\themes\metro\accordion.css" />
     <Content Include="Content\themes\metro\calendar.css" />

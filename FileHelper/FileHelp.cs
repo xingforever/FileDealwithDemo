@@ -66,6 +66,13 @@ namespace FileHelper
             List<object> list = new List<object>();//申明文件列表object类型
             //网站目录根目录下Document\Files  为文件地址
             string str = FileHelp.Standard(string.Format(@"{0}\Document\Files", basePath));
+            var isUserTablePng = true;
+            var idArray=id.Split('\\');//将ID 分割
+            if (idArray.Count()>1)
+            {
+                isUserTablePng = false;
+              
+            }
             if (id=="all")
             {
                 //加载Document\Files 下所有目录
@@ -83,25 +90,34 @@ namespace FileHelper
             }
             //获取所有的目录  
             DirectoryInfo info = new DirectoryInfo(str);
-            foreach (DirectoryInfo info2 in from x in info.GetDirectories()
-                                            orderby x.Name
-                                            select x) {
-                //获取该目录的类型: 如果该目录为文件夹  调用本方法            
-                var children = FileHelp.GetDirectoryTree(basePath, info2.Name, "closed");//获取该不目录下所有子目录文档
-                
-                if (file!="closed")
+            var theGiretorises = (from x in info.GetDirectories()
+                                  orderby x.Name
+                                  select x).ToList();
+            for (int i = 0; i < theGiretorises.Count(); i++)
+            {
+                DirectoryInfo info2 = theGiretorises[i];
+                //获取该目录的类型: 如果该目录为文件夹  调用本方法 
+                var thePath = info2.Name;
+                if (id != "all")
                 {
-                    list.Add(new { id = info2.Name, iconCls = "folder_table", state = "open", text = info2.Name, children = children });
+                    thePath = string.Format(@"{0}\{1}", id, info2.Name);
                 }
+
+                var children = FileHelp.GetDirectoryTree(basePath, thePath, "closed");//获取该不目录下所有子目录文档
+
+                if (file != "closed")
+                {
+                    list.Add(new { id = thePath, iconCls = "folder_table", state = "open", text = info2.Name, children = children });
+                }
+               
                 else
                 {
-                    list.Add(new { id = info2.Name,  state = "closed", text = info2.Name, children = children });
+                    
+                    list.Add(new { id = thePath,state = "closed", text = info2.Name, children = children });
 
                 }
-            
-                
             }
-             return list;//返回Json结果
+            return list;//返回Json结果
             
         }
         

@@ -557,13 +557,14 @@ function openDialog() {
    
 
 }
+
 //下载设置  百度webuploader 默认设置
 function uploadSetting() {
 
     var $ = jQuery,
         $list = $('#thelist'),
         $btn = $('#ctlBtn'),
-        state = 'pending',
+        state = 'pending';
         //开始按钮事件
         $btn.on('click', function () {
             if (state === 'uploading') {

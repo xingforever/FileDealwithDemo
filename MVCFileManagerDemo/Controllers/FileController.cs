@@ -59,9 +59,12 @@ namespace MVCFileManagerDemo.Controllers
             if (id==null)
             {
                 id = "all";
+                file = "open";
             }
+            
             try
             {
+                var dd = (FileHelper.FileHelp.GetDirectoryTree(basePath, id, file));
                 return Json(FileHelper.FileHelp.GetDirectoryTree(basePath, id, file), "text/html", JsonRequestBehavior.AllowGet);
             }
             catch (Exception)
